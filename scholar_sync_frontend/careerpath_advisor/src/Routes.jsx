@@ -9,6 +9,9 @@ import Dashboard from './pages/dashboard';
 import CommunityForum from './pages/community-forum';
 import EducatorDirectory from './pages/educator-directory';
 import ChatbotInterface from './pages/chatbot-interface';
+import Login from './pages/login';
+import Signup from './pages/signup';
+import Profile from './pages/profile';
 
 const Routes = () => {
   return (
@@ -18,6 +21,9 @@ const Routes = () => {
       <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<ChatbotInterface />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/college-search" element={<CollegeSearch />} />
         <Route path="/job-opportunities" element={<JobOpportunities />} />
         <Route path="/dashboard" element={<Dashboard />} />
