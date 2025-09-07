@@ -117,27 +117,29 @@ export default function ChatbotPage() {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto h-full">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Ask the Advisor
-        </h1>
-        <p className="text-gray-600">
-          Get personalized guidance for your career and education journey
-        </p>
-      </motion.div>
+    <div className="h-screen flex flex-col">
+      <div className="p-6 border-b">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-7xl mx-auto">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Ask the Advisor
+          </h1>
+          <p className="text-gray-600">
+            Get personalized guidance for your career and education journey
+          </p>
+        </motion.div>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 h-[calc(100vh-200px)]">
+      <div className="flex-1 grid grid-cols-1 lg:grid-cols-4 h-[calc(100vh-132px)]">
         {/* Chat History Sidebar */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
-          className="lg:col-span-1">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 h-full">
+          className="lg:col-span-1 border-r">
+          <div className="h-full p-4">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Chat History
             </h2>
@@ -168,9 +170,9 @@ export default function ChatbotPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="lg:col-span-3">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 h-full flex flex-col">
+          <div className="h-full flex flex-col">
             {/* Chat Header */}
-            <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-t-xl">
+            <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">

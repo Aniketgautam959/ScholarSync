@@ -228,37 +228,73 @@ export default function Dashboard() {
               })}
             </div>
           </div>
+
+          {/* Quick Actions */}
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mt-6">
+            <h2 className="font-serif text-2xl text-gray-800 mt-2 mb-6">
+              Quick Actions
+            </h2>
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-start gap-3 cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                <div className="p-2 bg-indigo-100 rounded-lg">
+                  <Users className="w-4 h-4 text-indigo-600" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-gray-900">
+                    Complete Profile
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Add missing information to get better recommendations
+                  </p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-gray-400 mt-1" />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex items-start gap-3 cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                <div className="p-2 bg-purple-100 rounded-lg">
+                  <Award className="w-4 h-4 text-purple-600" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-gray-900">
+                    Take Assessment
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Discover your strengths and career preferences
+                  </p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-gray-400 mt-1" />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex items-start gap-3 cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition-colors">
+                <div className="p-2 bg-green-100 rounded-lg">
+                  <BookOpen className="w-4 h-4 text-green-600" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-gray-900">
+                    Book Consultation
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Schedule a session with our career experts
+                  </p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-gray-400 mt-1" />
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </div>
-
-      {/* Quick Actions */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="mt-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
-        <h2 className="text-xl font-bold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button className="bg-white bg-opacity-20 rounded-lg p-4 text-left hover:bg-opacity-30 transition-all">
-            <h3 className="font-semibold mb-1">Complete Profile</h3>
-            <p className="text-sm opacity-90">
-              Add missing information to get better recommendations
-            </p>
-          </button>
-          <button className="bg-white bg-opacity-20 rounded-lg p-4 text-left hover:bg-opacity-30 transition-all">
-            <h3 className="font-semibold mb-1">Take Assessment</h3>
-            <p className="text-sm opacity-90">
-              Discover your strengths and career preferences
-            </p>
-          </button>
-          <button className="bg-white bg-opacity-20 rounded-lg p-4 text-left hover:bg-opacity-30 transition-all">
-            <h3 className="font-semibold mb-1">Book Consultation</h3>
-            <p className="text-sm opacity-90">
-              Schedule a session with our career experts
-            </p>
-          </button>
-        </div>
-      </motion.div>
     </div>
   );
 }
