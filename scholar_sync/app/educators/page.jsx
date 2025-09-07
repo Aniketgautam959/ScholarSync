@@ -16,6 +16,9 @@ import {
 } from "lucide-react";
 import { faker } from "@faker-js/faker";
 
+const COLLEGE_IMAGE =
+  "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 // Generate dummy educators
 const generateEducators = () => {
   const specializations = [
@@ -48,9 +51,7 @@ const generateEducators = () => {
     id: i + 1,
     name: faker.person.fullName(),
     title: faker.person.jobTitle(),
-    avatar: `https://images.unsplash.com/photo-${
-      1500000000000 + Math.floor(Math.random() * 500000000)
-    }?w=150&h=150&fit=crop&crop=face`,
+    avatar: COLLEGE_IMAGE,
     university: universities[Math.floor(Math.random() * universities.length)],
     specialization:
       specializations[Math.floor(Math.random() * specializations.length)],
@@ -497,10 +498,7 @@ export default function Educators() {
                       <div className="flex items-start justify-between">
                         <div className="flex items-center">
                           <img
-                            src={`https://images.unsplash.com/photo-${
-                              1500000000000 +
-                              Math.floor(Math.random() * 500000000)
-                            }?w=40&h=40&fit=crop&crop=face`}
+                            src={COLLEGE_IMAGE}
                             alt="Student"
                             className="w-10 h-10 rounded-full object-cover"
                           />

@@ -95,7 +95,7 @@ export default function Dashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-4xl text-gray-800 mt-2">
           Welcome back, Sarah!
         </h1>
         <p className="text-gray-600">
@@ -145,7 +145,7 @@ export default function Dashboard() {
           className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="font-serif text-2xl text-gray-800 mt-2">
                 Personalized Recommendations
               </h2>
               <button className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">
@@ -201,7 +201,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}>
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <h2 className="font-serif text-2xl text-gray-800 mt-2 mb-6">
               Recent Activity
             </h2>
             <div className="space-y-4">

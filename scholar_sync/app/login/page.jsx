@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Lock, Eye, EyeOff, Github, Chrome } from "lucide-react";
-import { useAuth } from "../contexts/AuthContext";
+// import { useAuth } from "../contexts/AuthContext";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,17 +14,17 @@ export default function Login() {
     confirmPassword: "",
     name: "",
   });
-  const { login } = useAuth();
+  // const { login } = useAuth();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simulate login
-    login({
-      name: formData.name || "Sarah Johnson",
-      email: formData.email,
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
-    });
+    //   e.preventDefault();
+    //   // Simulate login
+    //   login({
+    //     name: formData.name || "Sarah Johnson",
+    //     email: formData.email,
+    //     avatar:
+    //       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+    //   });
   };
 
   const handleInputChange = (e) => {

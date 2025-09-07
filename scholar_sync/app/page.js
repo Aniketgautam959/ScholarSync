@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import { faker } from '@faker-js/faker';
 
+const COLLEGE_IMAGE = "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 // --- Header Component ---
 const Header = () => {
   const router = useRouter();
@@ -74,7 +76,7 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <img
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop"
+          src={COLLEGE_IMAGE}
           alt="Students collaborating"
           className="w-full h-full object-cover"
         />
