@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Users,
   Plus,
+  X,
 } from "lucide-react";
 import { faker } from "@faker-js/faker";
 
@@ -27,7 +28,6 @@ const generatePosts = () => {
     "#StudyAbroad",
     "#CareerAdvice",
   ];
-  const postTypes = ["Question", "Experience", "Resource", "Achievement"];
 
   return Array.from({ length: 15 }, (_, i) => ({
     id: i + 1,
@@ -54,6 +54,8 @@ const generatePosts = () => {
   }));
 };
 
+const postTypes = ["Question", "Experience", "Resource", "Achievement"];
+
 const trendingTopics = [
   { tag: "#Admissions", posts: 1243 },
   { tag: "#Scholarships", posts: 897 },
@@ -66,6 +68,15 @@ export default function Community() {
   const [posts] = useState(generatePosts());
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [isAddPostModalOpen, setIsAddPostModalOpen] = useState(false);
+  const [newPost, setNewPost] = useState({
+    title: "",
+    content: "",
+    category: "#Admissions",
+    type: "Question",
+    tags: [],
+    currentTag: "",
+  });
 
   const categories = [
     "All",
@@ -110,6 +121,7 @@ export default function Community() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => setIsAddPostModalOpen(true)}
             className="w-full bg-indigo-600 text-white py-3 px-4 rounded-xl font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center">
             <Plus className="w-5 h-5 mr-2" />
             New Post
@@ -310,6 +322,176 @@ export default function Community() {
           </div>
         </motion.div>
       </div>
+
+      {/* Add Post Modal */}
+      {isAddPostModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-xl p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">
+                Create New Post
+              </h2>
+              <button
+                onClick={() => setIsAddPostModalOpen(false)}
+                className="text-gray-500 hover:text-gray-700">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // TODO: Handle form submission
+                setIsAddPostModalOpen(false);
+              }}
+              className="space-y-6">
+              {/* Title */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  value={newPost.title}
+                  onChange={(e) =>
+                    setNewPost({ ...newPost, title: e.target.value })
+                  }
+                  placeholder="Enter your post title"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  required
+                />
+              </div>
+
+              {/* Content */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Content
+                </label>
+                <textarea
+                  value={newPost.content}
+                  onChange={(e) =>
+                    setNewPost({ ...newPost, content: e.target.value })
+                  }
+                  placeholder="Share your thoughts, questions, or experiences..."
+                  rows={6}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  required
+                />
+              </div>
+
+              {/* Post Type */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Post Type
+                </label>
+                <select
+                  value={newPost.type}
+                  onChange={(e) =>
+                    setNewPost({ ...newPost, type: e.target.value })
+                  }
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                  {postTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Category */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Category
+                </label>
+                <select
+                  value={newPost.category}
+                  onChange={(e) =>
+                    setNewPost({ ...newPost, category: e.target.value })
+                  }
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                  {categories.slice(1).map((category) => (
+                    <option key={category} value={"#" + category.slice(0, -1)}>
+                      {"#" + category.slice(0, -1)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Tags */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Tags (press Enter to add)
+                </label>
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    value={newPost.currentTag || ""}
+                    onChange={(e) =>
+                      setNewPost({ ...newPost, currentTag: e.target.value })
+                    }
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && e.target.value.trim()) {
+                        e.preventDefault();
+                        const tag = e.target.value.trim();
+                        const formattedTag = tag.startsWith("#")
+                          ? tag
+                          : "#" + tag;
+                        if (!newPost.tags.includes(formattedTag)) {
+                          setNewPost({
+                            ...newPost,
+                            tags: [...newPost.tags, formattedTag],
+                            currentTag: "",
+                          });
+                        }
+                      }
+                    }}
+                    placeholder="Type a tag and press Enter (e.g. #college)"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {newPost.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-indigo-100 text-indigo-800">
+                        {tag}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setNewPost({
+                              ...newPost,
+                              tags: newPost.tags.filter((_, i) => i !== index),
+                            });
+                          }}
+                          className="ml-2 text-indigo-600 hover:text-indigo-800">
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex justify-end gap-4">
+                <button
+                  type="button"
+                  onClick={() => setIsAddPostModalOpen(false)}
+                  className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                  Create Post
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

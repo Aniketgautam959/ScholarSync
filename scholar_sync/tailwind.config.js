@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         // You can add custom colors here
       },
+      fontFamily: {
+        'poppins': ['var(--font-poppins)', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],
