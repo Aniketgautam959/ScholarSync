@@ -68,58 +68,176 @@ const classYears = [
 ];
 
 const generateScholarships = () => {
-  return Array.from({ length: 25 }, (_, i) => {
-    const isCentral = Math.random() > 0.3;
-    const deadline = faker.date.future({ years: 1 });
-    return {
-      id: i + 1,
-      name: `${
-        isCentral ? "National" : "State"
-      } Merit Scholarship for ${faker.helpers.arrayElement(
-        categories
-      )} Students`,
-      logo: "https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  return [
+    {
+      id: 1,
+      name: "AICTE Pragati Scholarship for Girls",
+      logo: "https://img.icons8.com/color/96/scholarship.png",
       authority: {
-        type: isCentral ? "Central" : "State",
-        name: isCentral
-          ? "Ministry of Education"
-          : `${faker.helpers.arrayElement(indianStates)} Government`,
+        type: "Central",
+        name: "AICTE, Ministry of Education",
       },
       eligibility: {
-        classYear: faker.helpers.arrayElement(classYears),
-        income: `Up to ₹${faker.number.int({ min: 1, max: 8 })} Lakh p.a.`,
-        category: faker.helpers.arrayElement(categories),
-        region: isCentral
-          ? "All India"
-          : faker.helpers.arrayElement(indianStates),
-        gender: faker.helpers.arrayElement(["All", "Girls Only"]),
+        classYear: "Undergraduate/Diploma",
+        income: "Up to ₹8 Lakh p.a.",
+        category: "General",
+        region: "All India",
+        gender: "Girls Only",
       },
-      benefit: `Up to ₹${faker.number.int({ min: 10, max: 50 })}
-,000 p.a.`,
-      deadline: deadline.toISOString(),
-      applicationPeriod: `${faker.date
-        .soon({ days: 30 })
-        .toLocaleDateString()} - ${deadline.toLocaleDateString()}`,
+      benefit: "₹50,000 per year",
+      deadline: "2025-10-31T00:00:00.000Z",
+      applicationPeriod: "01/08/2025 - 31/10/2025",
       applyLink: "https://scholarships.gov.in/",
       howToApply: [
-        "Visit the official scholarship portal.",
-        "Register as a new user with required details.",
-        "Log in and fill out the application form accurately.",
-        "Upload scanned copies of necessary documents.",
-        "Review and submit the application before the deadline.",
+        "Visit the NSP Portal.",
+        "Register as a new user with Aadhaar details.",
+        "Log in and fill out the scholarship application form.",
+        "Upload income and education certificates.",
+        "Submit before the deadline.",
       ],
       howToApplyHindi: [
-        "आधिकारिक छात्रवृत्ति पोर्टल पर जाएं।",
-        "आवश्यक विवरण के साथ एक नए उपयोगकर्ता के रूप में पंजीकरण करें।",
-        "लॉग इन करें और आवेदन पत्र को सही-सही भरें।",
-        "आवश्यक दस्तावेजों की स्कैन की हुई प्रतियां अपलोड करें।",
-        "अंतिम तिथि से पहले आवेदन की समीक्षा करें और जमा करें।",
+        "NSP पोर्टल पर जाएं।",
+        "आधार विवरण के साथ नए उपयोगकर्ता के रूप में पंजीकरण करें।",
+        "लॉग इन करें और छात्रवृत्ति आवेदन पत्र भरें।",
+        "आय और शिक्षा प्रमाणपत्र अपलोड करें।",
+        "अंतिम तिथि से पहले सबमिट करें।",
       ],
-      sourceLink: "#",
-      postedDate: faker.date.recent({ days: 30 }).toISOString(),
-    };
-  });
+      sourceLink: "https://www.aicte-india.org/",
+      postedDate: "2025-09-01T00:00:00.000Z",
+    },
+    {
+      id: 2,
+      name: "AICTE Saksham Scholarship for Differently Abled Students",
+      logo: "https://img.icons8.com/color/96/wheelchair.png",
+      authority: {
+        type: "Central",
+        name: "AICTE, Ministry of Education",
+      },
+      eligibility: {
+        classYear: "Undergraduate/Postgraduate",
+        income: "Up to ₹8 Lakh p.a.",
+        category: "Disability",
+        region: "All India",
+        gender: "All",
+      },
+      benefit: "₹50,000 per year",
+      deadline: "2025-10-31T00:00:00.000Z",
+      applicationPeriod: "01/08/2025 - 31/10/2025",
+      applyLink: "https://scholarships.gov.in/",
+      howToApply: [
+        "Visit the NSP portal.",
+        "Register and log in.",
+        "Fill in details and upload disability certificate.",
+        "Upload income and other documents.",
+        "Submit application.",
+      ],
+      howToApplyHindi: [
+        "NSP पोर्टल पर जाएं।",
+        "पंजीकरण करें और लॉगिन करें।",
+        "विवरण भरें और विकलांगता प्रमाणपत्र अपलोड करें।",
+        "आय और अन्य दस्तावेज़ अपलोड करें।",
+        "आवेदन सबमिट करें।",
+      ],
+      sourceLink: "https://www.aicte-india.org/",
+      postedDate: "2025-09-02T00:00:00.000Z",
+    },
+    {
+      id: 3,
+      name: "Ishan Uday Special Scholarship for NER",
+      logo: "https://img.icons8.com/color/96/education.png",
+      authority: {
+        type: "Central",
+        name: "UGC, Ministry of Education",
+      },
+      eligibility: {
+        classYear: "Undergraduate",
+        income: "Up to ₹4.5 Lakh p.a.",
+        category: "General",
+        region: "North-East India",
+        gender: "All",
+      },
+      benefit: "₹5,400–₹7,800 per month",
+      deadline: "2025-11-15T00:00:00.000Z",
+      applicationPeriod: "01/09/2025 - 15/11/2025",
+      applyLink: "https://scholarships.gov.in/",
+      howToApply: [
+        "Apply on NSP portal.",
+        "Upload domicile and income certificate.",
+        "Submit application.",
+      ],
+      howToApplyHindi: [
+        "NSP पोर्टल पर आवेदन करें।",
+        "डोमिसाइल और आय प्रमाण पत्र अपलोड करें।",
+        "आवेदन सबमिट करें।",
+      ],
+      sourceLink: "https://www.ugc.gov.in/",
+      postedDate: "2025-08-25T00:00:00.000Z",
+    },
+    {
+      id: 4,
+      name: "West Bengal Kanyashree Prakalpa",
+      logo: "https://img.icons8.com/color/96/student-female.png",
+      authority: {
+        type: "State",
+        name: "Government of West Bengal",
+      },
+      eligibility: {
+        classYear: "Class 8-12",
+        income: "Up to ₹1.2 Lakh p.a.",
+        category: "General",
+        region: "West Bengal",
+        gender: "Girls Only",
+      },
+      benefit: "₹1,000–₹25,000 one-time grant",
+      deadline: "2025-12-31T00:00:00.000Z",
+      applicationPeriod: "01/07/2025 - 31/12/2025",
+      applyLink: "https://wbkanyashree.gov.in/",
+      howToApply: [
+        "Collect form from school/institution.",
+        "Fill and attach income certificate.",
+        "Submit through head of institution.",
+      ],
+      howToApplyHindi: [
+        "विद्यालय/संस्थान से फॉर्म प्राप्त करें।",
+        "फॉर्म भरें और आय प्रमाण पत्र संलग्न करें।",
+        "संस्थान के प्रधानाचार्य के माध्यम से जमा करें।",
+      ],
+      sourceLink: "https://wbkanyashree.gov.in/",
+      postedDate: "2025-08-20T00:00:00.000Z",
+    },
+    {
+      id: 5,
+      name: "National Means-cum-Merit Scholarship (NMMSS)",
+      logo: "https://img.icons8.com/color/96/medal.png",
+      authority: {
+        type: "Central",
+        name: "Ministry of Education",
+      },
+      eligibility: {
+        classYear: "Class 9-12",
+        income: "Up to ₹3.5 Lakh p.a.",
+        category: "General",
+        region: "All India",
+        gender: "All",
+      },
+      benefit: "₹12,000 per year",
+      deadline: "2025-09-30T00:00:00.000Z",
+      applicationPeriod: "01/07/2025 - 30/09/2025",
+      applyLink: "https://scholarships.gov.in/",
+      howToApply: [
+        "Apply via NSP portal.",
+        "Pass selection test conducted by state/UT.",
+      ],
+      howToApplyHindi: [
+        "NSP पोर्टल से आवेदन करें।",
+        "राज्य/केंद्रशासित प्रदेश द्वारा आयोजित परीक्षा पास करें।",
+      ],
+      sourceLink: "https://www.education.gov.in/",
+      postedDate: "2025-08-10T00:00:00.000Z",
+    },
+  ];
 };
+
 
 const latestUpdates = [
   {
