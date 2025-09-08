@@ -32,9 +32,11 @@ export default function Sidebar() {
     <div className="w-64 bg-white border-r h-screen fixed left-0 top-0">
       {/* Logo */}
       <div className="p-6 border-b">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/dashboard" className="flex items-center gap-2">
           <GraduationCap className="h-8 w-8 text-indigo-600" />
-          <span className="font-bold text-xl text-gray-900">ScholarSync</span>
+          <span className="font-serif text-2xl text-indigo-600">
+            ScholarSync
+          </span>
         </Link>
       </div>
 

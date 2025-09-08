@@ -3,14 +3,23 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  TrendingUp,
-  Users,
-  BookOpen,
+  MessageSquare,
+  School,
+  GraduationCap,
+  Briefcase,
   Award,
   ArrowRight,
-  Star,
+  CheckCircle,
   Clock,
+  Plus,
+  User,
+  TrendingUp,
+  Users,
+  Star,
+  BookOpen,
 } from "lucide-react";
+import { faker } from "@faker-js/faker";
+import DashboardCard from "../components/DashboardCard";
 import OnboardingModal from "../components/OnboardingModal";
 
 const stats = [
@@ -43,6 +52,64 @@ const stats = [
     bg: "bg-orange-100",
   },
 ];
+
+const suggestedEducators = Array.from({ length: 2 }, () => ({
+  name: faker.person.fullName(),
+  specialty: faker.person.jobArea(),
+  avatar: `https://images.unsplash.com/photo-${
+    1500000000000 + Math.floor(Math.random() * 500000000)
+  }?w=40&h=40&fit=crop&crop=face`,
+}));
+
+const internships = {
+  suggested: [
+    {
+      id: 1,
+      title: "Frontend Developer Intern",
+      company: "Vercel",
+      logo: "https://logo.clearbit.com/vercel.com",
+    },
+    {
+      id: 2,
+      title: "Product Design Intern",
+      company: "Figma",
+      logo: "https://logo.clearbit.com/figma.com",
+    },
+  ],
+  applied: [
+    {
+      id: 3,
+      title: "Software Engineer Intern",
+      company: "Google",
+      logo: "https://logo.clearbit.com/google.com",
+    },
+  ],
+};
+
+const scholarships = {
+  suggested: [
+    {
+      id: 1,
+      name: "Tech Excellence Scholarship",
+      authority: "Google",
+      logo: "https://logo.clearbit.com/google.com",
+    },
+    {
+      id: 2,
+      name: "Future Leaders Grant",
+      authority: "Ford Foundation",
+      logo: "https://logo.clearbit.com/fordfoundation.org",
+    },
+  ],
+  applied: [
+    {
+      id: 3,
+      name: "National Merit Scholarship",
+      authority: "Govt. of India",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Seal_of_the_Ministry_of_Social_Justice_and_Empowerment.svg",
+    },
+  ],
+};
 
 const recommendations = [
   {
@@ -173,65 +240,204 @@ export default function Dashboard() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Personalized Recommendations */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="font-serif text-2xl text-gray-800 mt-2">
-                  Personalized Recommendations
-                </h2>
-                <button className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">
-                  View all
-                </button>
-              </div>
-              <div className="space-y-4">
-                {recommendations.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-12 h-12 rounded-lg object-cover"
-                    />
-                    <div className="ml-4 flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">
-                          {item.type}
-                        </span>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                          <span className="text-xs text-gray-600">
-                            {item.rating}
+          {/* Left Column - Personalized Recommendations and Internships/Scholarships */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Personalized Recommendations */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}>
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="font-serif text-2xl text-gray-800 mt-2">
+                    Personalized Recommendations
+                  </h2>
+                  <button className="text-sm text-indigo-600 hover:text-indigo-700 font-medium">
+                    View all
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {recommendations.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                      className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-12 h-12 rounded-lg object-cover"
+                      />
+                      <div className="ml-4 flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full">
+                            {item.type}
+                          </span>
+                          <div className="flex items-center gap-1">
+                            <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                            <span className="text-xs text-gray-600">
+                              {item.rating}
+                            </span>
+                          </div>
+                        </div>
+                        <h3 className="font-semibold text-gray-900 text-sm">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-gray-600">{item.provider}</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          <Clock className="w-3 h-3 text-gray-400" />
+                          <span className="text-xs text-gray-500">
+                            {item.duration}
                           </span>
                         </div>
                       </div>
-                      <h3 className="font-semibold text-gray-900 text-sm">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-gray-600">{item.provider}</p>
-                      <div className="flex items-center gap-1 mt-1">
-                        <Clock className="w-3 h-3 text-gray-400" />
-                        <span className="text-xs text-gray-500">
-                          {item.duration}
-                        </span>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-gray-400" />
-                  </motion.div>
-                ))}
+                      <ArrowRight className="w-4 h-4 text-gray-400" />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Recent Activity */}
+            {/* Internships & Scholarships - Stacked Vertically */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="space-y-6">
+              <DashboardCard
+                icon={Briefcase}
+                title="Internships"
+                viewAllLink="/internships">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-500 mb-2">
+                    Suggested for you
+                  </h3>
+                  {internships.suggested.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={item.logo}
+                          alt={item.company}
+                          className="w-8 h-8 rounded-lg object-contain"
+                        />
+                        <div>
+                          <p className="font-medium text-gray-800 text-sm">
+                            {item.title}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {item.company}
+                          </p>
+                        </div>
+                      </div>
+                      <button className="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-full">
+                        <Plus className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-500 mb-2">
+                    Applied
+                  </h3>
+                  {internships.applied.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between py-2">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={item.logo}
+                          alt={item.company}
+                          className="w-8 h-8 rounded-lg object-contain"
+                        />
+                        <div>
+                          <p className="font-medium text-gray-800 text-sm">
+                            {item.title}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {item.company}
+                          </p>
+                        </div>
+                      </div>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                  ))}
+                </div>
+              </DashboardCard>
+
+              <DashboardCard
+                icon={Award}
+                title="Scholarships"
+                viewAllLink="/scholarships">
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-500 mb-2">
+                    Suggested for you
+                  </h3>
+                  {scholarships.suggested.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={item.logo}
+                          alt={item.authority}
+                          className="w-8 h-8 rounded-lg object-contain bg-white p-1"
+                          onError={(e) => {
+                            e.target.src = "https://via.placeholder.com/32";
+                          }}
+                        />
+                        <div>
+                          <p className="font-medium text-gray-800 text-sm">
+                            {item.name}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {item.authority}
+                          </p>
+                        </div>
+                      </div>
+                      <button className="p-1.5 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-full">
+                        <Plus className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-500 mb-2">
+                    Applied
+                  </h3>
+                  {scholarships.applied.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between py-2">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={item.logo}
+                          alt={item.authority}
+                          className="w-8 h-8 rounded-lg object-contain bg-white p-1"
+                          onError={(e) => {
+                            e.target.src = "https://via.placeholder.com/32";
+                          }}
+                        />
+                        <div>
+                          <p className="font-medium text-gray-800 text-sm">
+                            {item.name}
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            {item.authority}
+                          </p>
+                        </div>
+                      </div>
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                    </div>
+                  ))}
+                </div>
+              </DashboardCard>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Recent Activity and Quick Actions */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -333,6 +539,7 @@ export default function Dashboard() {
             </div>
           </motion.div>
         </div>
+        {/* </div> */}
       </div>
 
       {/* Onboarding Modal */}

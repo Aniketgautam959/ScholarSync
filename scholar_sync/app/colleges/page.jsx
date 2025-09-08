@@ -16,107 +16,277 @@ import {
 } from "lucide-react";
 import { faker } from "@faker-js/faker";
 
-// Generate dummy colleges
-const generateColleges = () => {
-  const fields = [
-    "Computer Science",
-    "Engineering",
-    "Business",
-    "Medicine",
-    "Liberal Arts",
-    "Design",
-    "Finance",
-    "Psychology",
-    "Mathematics",
-    "Physics",
-  ];
-
-  const locations = [
-    "Boston, MA",
-    "Palo Alto, CA",
-    "Cambridge, MA",
-    "New York, NY",
-    "Los Angeles, CA",
-    "Chicago, IL",
-    "Philadelphia, PA",
-    "Washington, DC",
-    "Atlanta, GA",
-    "Seattle, WA",
-  ];
-
-  const collegeNames = [
-    "Harvard University",
-    "MIT",
-    "Stanford University",
-    "Yale University",
-    "Princeton University",
-    "Columbia University",
-    "University of Pennsylvania",
-    "Cornell University",
-    "Brown University",
-    "Dartmouth College",
-    "Northwestern University",
-    "Vanderbilt University",
-    "Rice University",
-    "Notre Dame",
-    "Carnegie Mellon University",
-    "University of California, Berkeley",
-    "UCLA",
-    "University of Michigan",
-    "University of Virginia",
-    "Georgia Tech",
-  ];
-
-  return Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    name: collegeNames[i] || `${faker.company.name()} University`,
+const indianColleges = [
+  {
+    id: 1,
+    name: "Indian Institute of Science (IISc), Bangalore",
     image:
-      "https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    location: locations[Math.floor(Math.random() * locations.length)],
-    field: fields[Math.floor(Math.random() * fields.length)],
-    rating: (4.0 + Math.random() * 1).toFixed(1),
-    tuitionFee: Math.floor(Math.random() * 40000) + 20000,
-    acceptanceRate: Math.floor(Math.random() * 30) + 10,
-    studentCount: Math.floor(Math.random() * 20000) + 5000,
-    description: faker.lorem.paragraph(),
-    founded: Math.floor(Math.random() * 200) + 1800,
-    ranking: Math.floor(Math.random() * 100) + 1,
-    employmentRate: Math.floor(Math.random() * 20) + 80,
-    avgSalary: Math.floor(Math.random() * 50000) + 50000,
-    scholarships: Math.random() > 0.3,
-    features: faker.lorem
-      .words(5)
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)),
-    deadline: new Date(
-      2024,
-      Math.floor(Math.random() * 12),
-      Math.floor(Math.random() * 28) + 1
-    ).toLocaleDateString(),
-  }));
-};
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiEruxbXKNm6CiV-4pZryr7230BbDbn-THjA&s",
+    location: "Bangalore, Karnataka",
+    field: "Science & Engineering",
+    rating: "4.9",
+    tuitionFee: 250000,
+    acceptanceRate: 15,
+    studentCount: 4000,
+    description:
+      "India's premier institute for advanced scientific and technological research.",
+    founded: 1909,
+    ranking: 1,
+    employmentRate: 95,
+    avgSalary: 1600000,
+    scholarships: true,
+    features: ["Hostel", "Research Labs", "Library", "Sports Complex", "Clubs"],
+    deadline: "30/04/2025",
+  },
+  {
+    id: 2,
+    name: "Indian Institute of Technology Bombay (IIT Bombay)",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzS9I0pJjvHxG1f0CJ9ziBmyQXNVG71lhGQ&s",
+    location: "Mumbai, Maharashtra",
+    field: "Engineering",
+    rating: "4.8",
+    tuitionFee: 300000,
+    acceptanceRate: 10,
+    studentCount: 11000,
+    description:
+      "A top-ranked IIT known for engineering, technology, and research excellence.",
+    founded: 1958,
+    ranking: 2,
+    employmentRate: 93,
+    avgSalary: 1500000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Research Labs",
+      "Library",
+      "Incubation Center",
+      "Sports",
+    ],
+    deadline: "15/05/2025",
+  },
+  {
+    id: 3,
+    name: "Indian Institute of Technology Delhi (IIT Delhi)",
+    image: "https://infra.iitd.ac.in/static/media/10.4b37a88fdbc685075e09.jpg",
+    location: "New Delhi",
+    field: "Engineering",
+    rating: "4.8",
+    tuitionFee: 290000,
+    acceptanceRate: 12,
+    studentCount: 9000,
+    description:
+      "One of India’s top IITs with a strong focus on engineering, innovation, and research.",
+    founded: 1961,
+    ranking: 3,
+    employmentRate: 92,
+    avgSalary: 1450000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Research Labs",
+      "Innovation Hub",
+      "Library",
+      "Sports Complex",
+    ],
+    deadline: "20/05/2025",
+  },
+  {
+    id: 4,
+    name: "Indian Institute of Technology Madras (IIT Madras)",
+    image:
+      "https://generic.wordpress.soton.ac.uk/webscience/wp-content/uploads/sites/117/2019/04/madras.jpg",
+    location: "Chennai, Tamil Nadu",
+    field: "Engineering",
+    rating: "4.9",
+    tuitionFee: 280000,
+    acceptanceRate: 11,
+    studentCount: 10000,
+    description:
+      "A globally recognized institute excelling in engineering, technology, and applied sciences.",
+    founded: 1959,
+    ranking: 4,
+    employmentRate: 93,
+    avgSalary: 1400000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Library",
+      "Research Labs",
+      "Startup Incubation",
+      "Sports",
+    ],
+    deadline: "25/05/2025",
+  },
+  {
+    id: 5,
+    name: "Jawaharlal Nehru University (JNU)",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/JNU_Admin.JPG/1280px-JNU_Admin.JPG",
+    location: "New Delhi",
+    field: "Liberal Arts",
+    rating: "4.6",
+    tuitionFee: 60000,
+    acceptanceRate: 20,
+    studentCount: 8000,
+    description:
+      "Leading university in social sciences, humanities, and international studies.",
+    founded: 1969,
+    ranking: 10,
+    employmentRate: 85,
+    avgSalary: 900000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Library",
+      "Cultural Clubs",
+      "Sports",
+      "Research Centers",
+    ],
+    deadline: "15/06/2025",
+  },
+  {
+    id: 6,
+    name: "Delhi University",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Delhi_University_North_Campus.jpg",
+    location: "Delhi",
+    field: "Multidisciplinary",
+    rating: "4.5",
+    tuitionFee: 40000,
+    acceptanceRate: 30,
+    studentCount: 60000,
+    description:
+      "India’s largest and most prestigious public university offering diverse programs.",
+    founded: 1922,
+    ranking: 12,
+    employmentRate: 80,
+    avgSalary: 800000,
+    scholarships: true,
+    features: ["Hostel", "Library", "Cultural Societies", "Sports", "Clubs"],
+    deadline: "30/06/2025",
+  },
+  {
+    id: 7,
+    name: "Banaras Hindu University (BHU)",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e7/BHU_Varanasi.jpg",
+    location: "Varanasi, Uttar Pradesh",
+    field: "Multidisciplinary",
+    rating: "4.6",
+    tuitionFee: 70000,
+    acceptanceRate: 25,
+    studentCount: 35000,
+    description:
+      "A historic central university known for diverse courses and research facilities.",
+    founded: 1916,
+    ranking: 14,
+    employmentRate: 82,
+    avgSalary: 850000,
+    scholarships: true,
+    features: ["Hostel", "Library", "Research Centers", "Sports", "Festivals"],
+    deadline: "10/07/2025",
+  },
+  {
+    id: 8,
+    name: "BITS Pilani",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/fb/BITS_Pilani_Campus.jpg",
+    location: "Pilani, Rajasthan",
+    field: "Engineering & Science",
+    rating: "4.7",
+    tuitionFee: 350000,
+    acceptanceRate: 18,
+    studentCount: 17000,
+    description:
+      "A top private university excelling in science, engineering, and entrepreneurship.",
+    founded: 1964,
+    ranking: 9,
+    employmentRate: 90,
+    avgSalary: 1200000,
+    scholarships: true,
+    features: ["Hostel", "Library", "Research Labs", "Clubs", "Sports Complex"],
+    deadline: "20/06/2025",
+  },
+  {
+    id: 9,
+    name: "Jamia Millia Islamia",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0c/Jamia_Millia_Islamia_Campus.jpg",
+    location: "New Delhi",
+    field: "Multidisciplinary",
+    rating: "4.4",
+    tuitionFee: 50000,
+    acceptanceRate: 28,
+    studentCount: 20000,
+    description:
+      "A central university with strengths in liberal arts, engineering, and research.",
+    founded: 1920,
+    ranking: 15,
+    employmentRate: 83,
+    avgSalary: 850000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Library",
+      "Cultural Clubs",
+      "Sports",
+      "Research Centers",
+    ],
+    deadline: "25/06/2025",
+  },
+  {
+    id: 10,
+    name: "University of Hyderabad",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/fd/UoH_Campus_Hyderabad.jpg",
+    location: "Hyderabad, Telangana",
+    field: "Science & Arts",
+    rating: "4.5",
+    tuitionFee: 60000,
+    acceptanceRate: 22,
+    studentCount: 5000,
+    description:
+      "A leading research university with a focus on science, arts, and social sciences.",
+    founded: 1974,
+    ranking: 18,
+    employmentRate: 84,
+    avgSalary: 900000,
+    scholarships: true,
+    features: [
+      "Hostel",
+      "Library",
+      "Sports Complex",
+      "Research Centers",
+      "Clubs",
+    ],
+    deadline: "05/07/2025",
+  },
+];
 
 const fields = [
   "All",
-  "Computer Science",
   "Engineering",
-  "Business",
-  "Medicine",
+  "Science & Engineering",
   "Liberal Arts",
-  "Design",
+  "Multidisciplinary",
+  "Science & Arts",
 ];
 
 const locations = [
   "All",
-  "California",
-  "Massachusetts",
-  "New York",
-  "Illinois",
-  "Pennsylvania",
+  "Bangalore",
+  "Mumbai",
+  "New Delhi",
+  "Chennai",
+  "Delhi",
+  "Varanasi",
+  "Pilani",
+  "Hyderabad",
 ];
 
 export default function Colleges() {
-  const [colleges] = useState(generateColleges());
+  const [colleges] = useState(indianColleges);
   const [selectedField, setSelectedField] = useState("All");
   const [selectedLocation, setSelectedLocation] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
