@@ -24,7 +24,7 @@ const generatePosts = () => {
       author: {
         name: "Dr. Rajesh Kumar",
         avatar:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1682092105693-1a2566cf2ee1?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "JEE Main 2024: Last Month Preparation Strategy for IIT Aspirants",
@@ -44,7 +44,7 @@ const generatePosts = () => {
       author: {
         name: "Priya Sharma",
         avatar:
-          "https://images.unsplash.com/photo-1602233158242-3ba0ac4d2167?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
         verified: false,
       },
       title: "My IIT Delhi Experience: From Kota to Campus Life",
@@ -64,7 +64,7 @@ const generatePosts = () => {
       author: {
         name: "Arjun Patel",
         avatar:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1581125119293-4803aa54b372?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "Government Job vs Private Sector: Which Path to Choose?",
@@ -84,7 +84,7 @@ const generatePosts = () => {
       author: {
         name: "Dr. Sneha Reddy",
         avatar:
-          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1682089949039-131eca5d7285?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title:
@@ -105,7 +105,7 @@ const generatePosts = () => {
       author: {
         name: "Rahul Kumar",
         avatar:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1691873264230-0ff72300185a?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: false,
       },
       title: "How I Got Selected for ISRO Scientist/Engineer Position",
@@ -125,7 +125,7 @@ const generatePosts = () => {
       author: {
         name: "Ananya Singh",
         avatar:
-          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
         verified: false,
       },
       title: "Scholarship Opportunities for Indian Students: Complete Guide",
@@ -145,7 +145,7 @@ const generatePosts = () => {
       author: {
         name: "Vikram Joshi",
         avatar:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1682092105693-1a2566cf2ee1?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "UPSC Preparation: My Journey from Engineering to Civil Services",
@@ -165,7 +165,7 @@ const generatePosts = () => {
       author: {
         name: "Kavya Nair",
         avatar:
-          "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
         verified: false,
       },
       title: "IIT vs NIT vs IIIT: Which is Better for Computer Science?",
@@ -185,7 +185,7 @@ const generatePosts = () => {
       author: {
         name: "Dr. Rohit Gupta",
         avatar:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1581125119293-4803aa54b372?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "Mental Health and Academic Pressure: A Teacher's Perspective",
@@ -205,7 +205,7 @@ const generatePosts = () => {
       author: {
         name: "Divya Agarwal",
         avatar:
-          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1682089949039-131eca5d7285?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: false,
       },
       title: "My Experience with GATE Preparation and PSU Recruitment",
@@ -225,7 +225,7 @@ const generatePosts = () => {
       author: {
         name: "Amit Shah",
         avatar:
-          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1691873264230-0ff72300185a?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "JEE Advanced 2024: Common Mistakes to Avoid in Physics",
@@ -245,7 +245,7 @@ const generatePosts = () => {
       author: {
         name: "Pooja Mehta",
         avatar:
-          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
         verified: false,
       },
       title: "How to Choose the Right Engineering Branch: A Student's Guide",
@@ -265,7 +265,7 @@ const generatePosts = () => {
       author: {
         name: "Suresh Kumar",
         avatar:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
+          "https://plus.unsplash.com/premium_photo-1682092105693-1a2566cf2ee1?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "Banking Sector Jobs: IBPS vs SBI vs RBI - Which to Choose?",
@@ -285,7 +285,7 @@ const generatePosts = () => {
       author: {
         name: "Deepika Iyer",
         avatar:
-          "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
         verified: false,
       },
       title: "My IIT Bombay Journey: From Small Town to Silicon Valley",
@@ -305,7 +305,7 @@ const generatePosts = () => {
       author: {
         name: "Rajesh Verma",
         avatar:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
+          "https://images.unsplash.com/photo-1581125119293-4803aa54b372?w=40&h=40&fit=crop&crop=face&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
         verified: true,
       },
       title: "NEET 2024: Last Month Strategy for Medical Aspirants",
