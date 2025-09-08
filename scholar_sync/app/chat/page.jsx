@@ -123,7 +123,7 @@ export default function ChatbotPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="font-serif text-3xl text-gray-800 mb-2">
             Ask the Advisor
           </h1>
           <p className="text-gray-600">

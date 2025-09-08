@@ -189,7 +189,7 @@ const ScholarshipCard = ({ scholarship }) => {
             }}
           />
           <div>
-            <h3 className="text-lg font-bold text-gray-900">
+            <h3 className="font-serif text-lg text-gray-800">
               {scholarship.name}
             </h3>
             <p className="text-sm text-gray-600">
@@ -368,7 +368,7 @@ export default function Scholarships() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-3xl text-gray-800 mb-2">
           Scholarships, Subsidies & Aid
         </h1>
         <p className="text-gray-600">

@@ -123,7 +123,7 @@ export default function Educators() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-3xl text-gray-800 mb-2">
           Verified Educators & Counselors
         </h1>
         <p className="text-gray-600">
@@ -280,13 +280,13 @@ export default function Educators() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4 mb-4 text-center">
               <div>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="font-serif text-lg text-gray-800">
                   {educator.totalStudents}
                 </p>
                 <p className="text-xs text-gray-500">Students Helped</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="font-serif text-lg text-gray-800">
                   {educator.successRate}%
                 </p>
                 <p className="text-xs text-gray-500">Success Rate</p>
@@ -350,7 +350,7 @@ export default function Educators() {
                   )}
                 </div>
                 <div className="ml-4">
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="font-serif text-2xl text-gray-800">
                     {selectedEducator.name}
                   </h2>
                   <p className="text-gray-600">{selectedEducator.title}</p>
@@ -484,7 +484,7 @@ export default function Educators() {
                     <div className="flex items-center">
                       <Star className="w-8 h-8 text-yellow-400 fill-current" />
                       <div className="ml-2">
-                        <p className="text-3xl font-bold text-gray-900">
+                        <p className="font-serif text-3xl text-gray-800">
                           {selectedEducator.rating}
                         </p>
                         <p className="text-sm text-gray-500">Average Rating</p>

@@ -101,7 +101,7 @@ export default function Community() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-3xl text-gray-800 mb-2">
           Community Discussions
         </h1>
         <p className="text-gray-600">
@@ -331,7 +331,7 @@ export default function Community() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-white rounded-xl p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">
+              <h2 className="font-serif text-2xl text-gray-800">
                 Create New Post
               </h2>
               <button

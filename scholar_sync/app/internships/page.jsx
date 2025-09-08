@@ -164,7 +164,7 @@ export default function Internships() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-3xl text-gray-800 mb-2">
           Internship & Job Opportunities
         </h1>
         <p className="text-gray-600">
@@ -271,7 +271,7 @@ export default function Internships() {
                 </div>
                 <div className="ml-4 flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="font-serif text-xl text-gray-800">
                       {internship.title}
                     </h3>
                     {internship.featured && (

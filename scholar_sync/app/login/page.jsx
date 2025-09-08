@@ -49,7 +49,7 @@ export default function Login() {
             className="mx-auto h-12 w-12 bg-indigo-600 rounded-xl flex items-center justify-center">
             <span className="text-white font-bold text-xl">CP</span>
           </motion.div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">
+          <h2 className="mt-6 font-serif text-3xl text-gray-800">
             {isLogin ? "Sign in to your account" : "Create your account"}
           </h2>
           <p className="mt-2 text-sm text-gray-600">

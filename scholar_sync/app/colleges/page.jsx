@@ -70,9 +70,8 @@ const generateColleges = () => {
   return Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,
     name: collegeNames[i] || `${faker.company.name()} University`,
-    image: `https://images.unsplash.com/photo-${
-      1500000000000 + Math.floor(Math.random() * 500000000)
-    }?w=400&h=250&fit=crop`,
+    image:
+      "https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: locations[Math.floor(Math.random() * locations.length)],
     field: fields[Math.floor(Math.random() * fields.length)],
     rating: (4.0 + Math.random() * 1).toFixed(1),
@@ -106,6 +105,7 @@ const fields = [
   "Liberal Arts",
   "Design",
 ];
+
 const locations = [
   "All",
   "California",
@@ -157,7 +157,7 @@ export default function Colleges() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        <h1 className="font-serif text-3xl text-gray-800 mb-2">
           Explore Colleges & Universities
         </h1>
         <p className="text-gray-600">
@@ -272,7 +272,7 @@ export default function Colleges() {
             <div className="p-6">
               {/* Header */}
               <div className="mb-4">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="font-serif text-xl text-gray-800 mb-2">
                   {college.name}
                 </h3>
                 <div className="flex items-center text-gray-600 mb-2">
@@ -295,28 +295,28 @@ export default function Colleges() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="text-center p-3 bg-gray-50 rounded-lg">
                   <Users className="w-5 h-5 text-blue-500 mx-auto mb-1" />
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="font-serif text-lg text-gray-800">
                     {college.studentCount.toLocaleString()}
                   </p>
                   <p className="text-xs text-gray-500">Students</p>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-lg">
                   <TrendingUp className="w-5 h-5 text-green-500 mx-auto mb-1" />
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="font-serif text-lg text-gray-800">
                     {college.acceptanceRate}%
                   </p>
                   <p className="text-xs text-gray-500">Acceptance</p>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-lg">
                   <DollarSign className="w-5 h-5 text-purple-500 mx-auto mb-1" />
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="font-serif text-lg text-gray-800">
                     ${college.tuitionFee.toLocaleString()}
                   </p>
                   <p className="text-xs text-gray-500">Annual Tuition</p>
                 </div>
                 <div className="text-center p-3 bg-gray-50 rounded-lg">
                   <Award className="w-5 h-5 text-orange-500 mx-auto mb-1" />
-                  <p className="text-lg font-bold text-gray-900">
+                  <p className="font-serif text-lg text-gray-800">
                     {college.employmentRate}%
                   </p>
                   <p className="text-xs text-gray-500">Employment</p>
