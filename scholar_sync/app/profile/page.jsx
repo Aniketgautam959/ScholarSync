@@ -59,15 +59,15 @@ const onboardingPreferences = [
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
-    name: "Sarah Johnson",
-    email: "sarah.johnson@email.com",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
+    name: "Navya Yadav",
+    email: "navyayadav@email.com",
+    phone: "+91 6534892022",
+    location: "Vashundhra, Delhi",
     bio: "Passionate computer science student with a keen interest in artificial intelligence and machine learning. Looking to pursue advanced studies and internship opportunities in tech.",
     education: [
       {
-        institution: "University of California, Berkeley",
-        degree: "Bachelor of Science in Computer Science",
+        institution: "Indian Institute of Technology, Delhi",
+        degree: "Bachelor of Technology in Computer Science",
         year: "2021-2025",
         gpa: "3.8/4.0",
       },
@@ -363,7 +363,7 @@ export default function Profile() {
             <div className="text-center">
               <div className="relative inline-block">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  src="https://images.unsplash.com/photo-1592085550638-e6bc180a731e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwc3R1ZGVudHxlbnwwfHwwfHx8MA%3D%3D"
                   alt="Profile"
                   className="w-24 h-24 rounded-full mx-auto object-cover"
                 />
