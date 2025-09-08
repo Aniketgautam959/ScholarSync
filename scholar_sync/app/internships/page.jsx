@@ -19,56 +19,56 @@ import { faker } from "@faker-js/faker";
 // Generate dummy internships
 const generateInternships = () => {
   const domains = [
-    "Engineering",
     "Computer Science",
     "Data Science",
-    "Design",
+    "AI & ML",
+    "Cybersecurity",
+    "Web Development",
+    "App Development",
+    "UI/UX Design",
     "Marketing",
     "Finance",
-    "Business",
-    "Research",
-    "Healthcare",
-    "Media",
+    "Business Management",
   ];
 
   const companies = [
-    "Google",
-    "Microsoft",
-    "Apple",
-    "Amazon",
-    "Meta",
-    "Netflix",
-    "Tesla",
-    "Spotify",
-    "Adobe",
-    "Salesforce",
-    "Uber",
-    "Airbnb",
-    "Twitter",
-    "LinkedIn",
-    "Intel",
-    "NVIDIA",
-    "IBM",
-    "Oracle",
-    "Cisco",
-    "Samsung",
+    "Infosys",
+    "TCS",
+    "Wipro",
+    "HCL Technologies",
+    "Tech Mahindra",
+    "Cognizant India",
+    "Accenture India",
+    "Mindtree",
+    "L&T Infotech",
+    "Reliance Jio",
+    "Adani Digital Labs",
+    "Flipkart",
+    "Zomato",
+    "Swiggy",
+    "Paytm",
+    "Ola Cabs",
+    "BYJU'S",
+    "Unacademy",
+    "PhonePe",
+    "Freshworks",
   ];
 
   const locations = [
-    "San Francisco, CA",
-    "New York, NY",
-    "Seattle, WA",
-    "Austin, TX",
-    "Boston, MA",
-    "Los Angeles, CA",
-    "Chicago, IL",
-    "Remote",
-    "London, UK",
-    "Toronto, CA",
+    "Bengaluru, Karnataka",
+    "Hyderabad, Telangana",
+    "Pune, Maharashtra",
+    "Gurugram, Haryana",
+    "Noida, Uttar Pradesh",
+    "Chennai, Tamil Nadu",
+    "Mumbai, Maharashtra",
+    "Delhi, India",
+    "Kolkata, West Bengal",
+    "Pan India",
   ];
 
-  const workTypes = ["Remote", "On-site", "Hybrid"];
-  const durations = ["Summer 2024", "3 months", "6 months", "Fall 2024"];
+  const workTypes = ["Virtual Internship", "On-site", "Hybrid"];
+  const durations = ["6 Weeks", "2 Months", "3 Months", "6 Months"];
 
   return Array.from({ length: 30 }, (_, i) => ({
     id: i + 1,
@@ -78,30 +78,27 @@ const generateInternships = () => {
       Math.floor(Math.random() * companies.length)
     ]
       .toLowerCase()
-      .replace(" ", "")}.com`,
+      .replace(/\s+/g, "")}.com`,
     location: locations[Math.floor(Math.random() * locations.length)],
     domain: domains[Math.floor(Math.random() * domains.length)],
     workType: workTypes[Math.floor(Math.random() * workTypes.length)],
     duration: durations[Math.floor(Math.random() * durations.length)],
-    stipend: Math.random() > 0.3 ? Math.floor(Math.random() * 3000) + 1000 : 0,
-    description: faker.lorem.paragraph(),
-    requirements: faker.lorem
-      .sentences(3)
-      .split(".")
-      .slice(0, 3)
-      .map((req) => req.trim())
-      .filter((req) => req),
+    stipend: Math.random() > 0.3 ? Math.floor(Math.random() * 8000) + 2000 : 0,
+    description:
+      "Exciting opportunity for students and freshers to gain hands-on experience with live projects and mentorship from industry professionals.",
+    requirements: [
+      "Strong problem-solving skills",
+      "Basic understanding of domain concepts",
+      "Eagerness to learn and adapt",
+    ],
     posted: `${Math.floor(Math.random() * 7) + 1} days ago`,
-    applicants: Math.floor(Math.random() * 500) + 50,
+    applicants: Math.floor(Math.random() * 200) + 20,
     deadline: new Date(
-      2024,
+      2025,
       Math.floor(Math.random() * 12),
       Math.floor(Math.random() * 28) + 1
-    ).toLocaleDateString(),
-    tags: faker.lorem
-      .words(4)
-      .split(" ")
-      .map((word) => `#${word.charAt(0).toUpperCase() + word.slice(1)}`),
+    ).toLocaleDateString("en-IN"),
+    tags: ["#Internship", "#India", "#Learning", "#Certificate"],
     featured: Math.random() > 0.7,
     rating: (4.0 + Math.random() * 1).toFixed(1),
     benefits: [
@@ -115,14 +112,18 @@ const generateInternships = () => {
 
 const domains = [
   "All",
-  "Engineering",
   "Computer Science",
   "Data Science",
-  "Design",
+  "AI & ML",
+  "Cybersecurity",
+  "Web Development",
+  "App Development",
+  "UI/UX Design",
   "Marketing",
   "Finance",
-  "Business",
+  "Business Management",
 ];
+
 const workTypes = ["All", "Remote", "On-site", "Hybrid"];
 
 export default function Internships() {
