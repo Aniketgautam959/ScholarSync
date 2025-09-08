@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { List } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   Camera,
@@ -12,6 +13,48 @@ import {
   BookOpen,
   Briefcase,
 } from "lucide-react";
+const onboardingPreferences = [
+  {
+    question: "What is your current class/education level?",
+    answer: "Class 12",
+  },
+  {
+    question: "Which board/medium are you studying in?",
+    answer: "CBSE",
+  },
+  {
+    question: "Medium of instruction:",
+    answer: "English",
+  },
+  {
+    question: "Where are you located?",
+    answer: "Pin: 94105, District: San Francisco, State: CA",
+  },
+  {
+    question: "Which subjects do you enjoy the most?",
+    answer: "Mathematics & Problem Solving, Computers & Technology",
+  },
+  {
+    question: "What type of activities excite you more?",
+    answer: "Creative & Artistic Work, Helping People / Social Impact",
+  },
+  {
+    question: "Do you already have a career goal in mind?",
+    answer: "Engineer",
+  },
+  {
+    question: "What matters the most to you while choosing a course?",
+    answer: "Interest & passion in the subject, Good job opportunities",
+  },
+  {
+    question: "Would you prefer a college close to home or are you open to hostels?",
+    answer: "Open to hostel / outside district",
+  },
+  {
+    question: "Do you need scholarships or financial aid information?",
+    answer: "Yes",
+  },
+];
 
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
@@ -285,7 +328,26 @@ export default function Profile() {
               </div>
             </div>
           </div>
-        </motion.div>
+        {/* Preferences Section */}
+<div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6">
+  <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+    <List className="w-5 h-5 text-indigo-600" /> Preferences
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {onboardingPreferences.map((pref, idx) => (
+      <div
+        key={idx}
+        className="p-4 bg-gray-50 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow duration-200">
+        <p className="text-sm font-medium text-gray-600 mb-1">{pref.question}</p>
+        <p className="text-gray-900 font-semibold">{pref.answer}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+    </motion.div>
+
 
         {/* Sidebar */}
         <motion.div
