@@ -14,72 +14,218 @@ import {
   BookOpen,
   X,
 } from "lucide-react";
-import { faker } from "@faker-js/faker";
 
 const COLLEGE_IMAGE =
   "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-// Generate dummy educators
+// Generate educators with specific data
 const generateEducators = () => {
-  const specializations = [
-    "Computer Science",
-    "Data Science",
-    "Business",
-    "Medicine",
-    "Engineering",
-    "Psychology",
-    "Finance",
-    "Marketing",
-    "Design",
-    "Mathematics",
+  return [
+    {
+      id: 1,
+      name: "Dr. Anil Verma",
+      title: "Associate Professor, Computer Science Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1682092105693-1a2566cf2ee1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Delhi",
+      specialization: "Computer Science Engineering",
+      rating: "4.9",
+      reviews: 432,
+      experience: 15,
+      hourlyRate: 1200,
+      bio: "Expert in computer science engineering with specialization in algorithms, data structures, and software development. Helping students excel in their engineering journey.",
+      verified: true,
+      available: true,
+      responseTime: "4 hours",
+      expertise: ["Algorithms", "Data Structures", "Software Engineering", "Programming"],
+      totalStudents: 520,
+      successRate: 87,
+    },
+    {
+      id: 2,
+      name: "Prof. Meena Sharma",
+      title: "Assistant Professor, Mechanical Engineering",
+      avatar: "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
+      university: "Indian Institute of Technology, Mumbai",
+      specialization: "Mechanical Engineering",
+      rating: "4.8",
+      reviews: 278,
+      experience: 12,
+      hourlyRate: 950,
+      bio: "Specialized in mechanical engineering with focus on thermodynamics, machine design, and manufacturing. Committed to student success in engineering.",
+      verified: true,
+      available: true,
+      responseTime: "10 hours",
+      expertise: ["Thermodynamics", "Machine Design", "Manufacturing", "CAD/CAM"],
+      totalStudents: 310,
+      successRate: 82,
+    },
+    {
+      id: 3,
+      name: "Dr. Rajesh Iyer",
+      title: "Professor, Electrical Engineering",
+      avatar: "https://images.unsplash.com/photo-1581125119293-4803aa54b372?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Chennai",
+      specialization: "Electrical Engineering",
+      rating: "5.0",
+      reviews: 512,
+      experience: 20,
+      hourlyRate: 1500,
+      bio: "Electrical engineering professor with extensive experience in power systems, control systems, and electronics. Making complex electrical concepts simple and understandable.",
+      verified: true,
+      available: true,
+      responseTime: "8 hours",
+      expertise: ["Power Systems", "Control Systems", "Electronics", "Circuit Analysis"],
+      totalStudents: 610,
+      successRate: 90,
+    },
+    {
+      id: 4,
+      name: "Prof. Kavita Deshmukh",
+      title: "Associate Professor, Civil Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1682089949039-131eca5d7285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Kanpur",
+      specialization: "Civil Engineering",
+      rating: "4.7",
+      reviews: 198,
+      experience: 11,
+      hourlyRate: 800,
+      bio: "Passionate about civil engineering with expertise in structural analysis, construction management, and environmental engineering. Helping students develop practical engineering skills.",
+      verified: true,
+      available: true,
+      responseTime: "12 hours",
+      expertise: ["Structural Analysis", "Construction Management", "Environmental Engineering", "Surveying"],
+      totalStudents: 240,
+      successRate: 79,
+    },
+    {
+      id: 5,
+      name: "Dr. Suresh Nair",
+      title: "Professor, Chemical Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1691873264230-0ff72300185a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Guwahati",
+      specialization: "Chemical Engineering",
+      rating: "4.9",
+      reviews: 385,
+      experience: 18,
+      hourlyRate: 1300,
+      bio: "Chemical engineering professor specializing in process design, thermodynamics, and reaction engineering. Making chemical engineering concepts accessible and engaging for students.",
+      verified: true,
+      available: true,
+      responseTime: "6 hours",
+      expertise: ["Process Design", "Thermodynamics", "Reaction Engineering", "Mass Transfer"],
+      totalStudents: 470,
+      successRate: 85,
+    },
+    {
+      id: 6,
+      name: "Prof. Nidhi Chawla",
+      title: "Assistant Professor, Electronics Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1682089949039-131eca5d7285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Roorkee",
+      specialization: "Electronics Engineering",
+      rating: "4.8",
+      reviews: 254,
+      experience: 13,
+      hourlyRate: 900,
+      bio: "Electronics engineering expert with focus on digital systems, microprocessors, and communication systems. Building future electronics engineers.",
+      verified: true,
+      available: true,
+      responseTime: "9 hours",
+      expertise: ["Digital Systems", "Microprocessors", "Communication Systems", "VLSI Design"],
+      totalStudents: 300,
+      successRate: 83,
+    },
+    {
+      id: 7,
+      name: "Dr. Arvind Kumar",
+      title: "Associate Professor, Aerospace Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1682092105693-1a2566cf2ee1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Kharagpur",
+      specialization: "Aerospace Engineering",
+      rating: "5.0",
+      reviews: 442,
+      experience: 16,
+      hourlyRate: 1400,
+      bio: "Aerospace engineering expert with specialization in aerodynamics, propulsion systems, and flight mechanics. Preparing students for the aerospace industry.",
+      verified: true,
+      available: true,
+      responseTime: "5 hours",
+      expertise: ["Aerodynamics", "Propulsion Systems", "Flight Mechanics", "Aircraft Design"],
+      totalStudents: 530,
+      successRate: 89,
+    },
+    {
+      id: 8,
+      name: "Prof. Rekha Gupta",
+      title: "Assistant Professor, Environmental Engineering",
+      avatar: "https://images.unsplash.com/photo-1664382951821-8151535191e5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwdGVhY2hlcnxlbnwwfHwwfHx8MA%3D%3D",
+      university: "Indian Institute of Technology, Hyderabad",
+      specialization: "Environmental Engineering",
+      rating: "4.7",
+      reviews: 176,
+      experience: 10,
+      hourlyRate: 850,
+      bio: "Environmental engineering professor specializing in water treatment, air pollution control, and sustainable engineering. Making environmental concepts practical and relevant.",
+      verified: true,
+      available: true,
+      responseTime: "14 hours",
+      expertise: ["Water Treatment", "Air Pollution Control", "Sustainable Engineering", "Waste Management"],
+      totalStudents: 220,
+      successRate: 78,
+    },
+    {
+      id: 9,
+      name: "Dr. Pradeep Joshi",
+      title: "Professor, Biomedical Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1691873264230-0ff72300185a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Indore",
+      specialization: "Biomedical Engineering",
+      rating: "4.9",
+      reviews: 395,
+      experience: 19,
+      hourlyRate: 1100,
+      bio: "Biomedical engineering professor with expertise in medical devices, bioinstrumentation, and tissue engineering. Bringing engineering solutions to healthcare challenges.",
+      verified: true,
+      available: true,
+      responseTime: "7 hours",
+      expertise: ["Medical Devices", "Bioinstrumentation", "Tissue Engineering", "Biomechanics"],
+      totalStudents: 460,
+      successRate: 86,
+    },
+    {
+      id: 10,
+      name: "Prof. Shalini Menon",
+      title: "Associate Professor, Materials Engineering",
+      avatar: "https://plus.unsplash.com/premium_photo-1682089949039-131eca5d7285?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhbiUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D",
+      university: "Indian Institute of Technology, Mumbai",
+      specialization: "Materials Engineering",
+      rating: "4.8",
+      reviews: 268,
+      experience: 14,
+      hourlyRate: 1000,
+      bio: "Materials engineering professor specializing in metallurgy, polymers, and nanomaterials. Making materials science concepts clear and helping students excel in engineering.",
+      verified: true,
+      available: true,
+      responseTime: "11 hours",
+      expertise: ["Metallurgy", "Polymers", "Nanomaterials", "Materials Characterization"],
+      totalStudents: 340,
+      successRate: 84,
+    },
   ];
-
-  const universities = [
-    "Harvard University",
-    "MIT",
-    "Stanford University",
-    "Yale University",
-    "Princeton University",
-    "Columbia University",
-    "University of Pennsylvania",
-    "Cornell University",
-    "Brown University",
-    "Dartmouth College",
-  ];
-
-  return Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    name: faker.person.fullName(),
-    title: faker.person.jobTitle(),
-    avatar: COLLEGE_IMAGE,
-    university: universities[Math.floor(Math.random() * universities.length)],
-    specialization:
-      specializations[Math.floor(Math.random() * specializations.length)],
-    rating: (4.0 + Math.random() * 1).toFixed(1),
-    reviews: Math.floor(Math.random() * 500) + 50,
-    experience: Math.floor(Math.random() * 20) + 5,
-    hourlyRate: Math.floor(Math.random() * 100) + 50,
-    bio: faker.lorem.paragraph(),
-    verified: Math.random() > 0.3,
-    available: Math.random() > 0.2,
-    responseTime: `${Math.floor(Math.random() * 24) + 1} hours`,
-    expertise: faker.lorem
-      .words(4)
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)),
-    totalStudents: Math.floor(Math.random() * 1000) + 100,
-    successRate: Math.floor(Math.random() * 20) + 80,
-  }));
 };
 
 const specializations = [
   "All",
-  "Computer Science",
-  "Business",
-  "Engineering",
-  "Medicine",
-  "Design",
-  "Finance",
+  "Computer Science Engineering",
+  "Mechanical Engineering",
+  "Electrical Engineering",
+  "Civil Engineering",
+  "Chemical Engineering",
+  "Electronics Engineering",
+  "Aerospace Engineering",
+  "Environmental Engineering",
+  "Biomedical Engineering",
+  "Materials Engineering",
 ];
 
 export default function Educators() {
@@ -241,7 +387,7 @@ export default function Educators() {
               </div>
               <div className="text-right">
                 <p className="text-lg font-bold text-indigo-600">
-                  ${educator.hourlyRate}/hr
+                  ₹{educator.hourlyRate}/hr
                 </p>
                 <p className="text-xs text-gray-500">
                   {educator.experience} years exp.
@@ -493,21 +639,44 @@ export default function Educators() {
                   </div>
 
                   {/* Sample Reviews */}
-                  {Array.from({ length: 3 }).map((_, index) => (
+                  {[
+                    {
+                      name: "Priya Singh",
+                      rating: 5,
+                      daysAgo: 5,
+                      review: "Excellent teacher! Dr. Anil Verma made accounting concepts so clear and easy to understand. Highly recommended for commerce students."
+                    },
+                    {
+                      name: "Rahul Kumar",
+                      rating: 4,
+                      daysAgo: 12,
+                      review: "Great teaching methodology and very patient with students. The sessions are well-structured and informative."
+                    },
+                    {
+                      name: "Anita Sharma",
+                      rating: 5,
+                      daysAgo: 8,
+                      review: "Outstanding educator who goes above and beyond to help students succeed. The practical examples really help in understanding complex topics."
+                    }
+                  ].map((review, index) => (
                     <div key={index} className="border-b border-gray-200 pb-6">
                       <div className="flex items-start justify-between">
                         <div className="flex items-center">
                           <img
-                            src={COLLEGE_IMAGE}
+                            src={[
+                              "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+                              "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+                              "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                            ][index]}
                             alt="Student"
                             className="w-10 h-10 rounded-full object-cover"
                           />
                           <div className="ml-3">
                             <p className="font-medium text-gray-900">
-                              {faker.person.fullName()}
+                              {review.name}
                             </p>
                             <p className="text-sm text-gray-500">
-                              {Math.floor(Math.random() * 30) + 1} days ago
+                              {review.daysAgo} days ago
                             </p>
                           </div>
                         </div>
@@ -516,7 +685,7 @@ export default function Educators() {
                             <Star
                               key={i}
                               className={`w-4 h-4 ${
-                                i < Math.floor(Math.random() * 2) + 4
+                                i < review.rating
                                   ? "text-yellow-400 fill-current"
                                   : "text-gray-300"
                               }`}
@@ -525,7 +694,7 @@ export default function Educators() {
                         </div>
                       </div>
                       <p className="mt-4 text-gray-600">
-                        {faker.lorem.paragraph()}
+                        {review.review}
                       </p>
                     </div>
                   ))}
@@ -545,7 +714,7 @@ export default function Educators() {
                     </div>
                     <div className="text-right">
                       <p className="text-2xl font-bold text-indigo-600">
-                        ${selectedEducator.hourlyRate}
+                        ₹{selectedEducator.hourlyRate}
                       </p>
                       <p className="text-sm text-gray-500">per hour</p>
                     </div>
@@ -612,7 +781,7 @@ export default function Educators() {
                   </div>
 
                   <button className="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
-                    Book Session (${selectedEducator.hourlyRate})
+                    Book Session (₹{selectedEducator.hourlyRate})
                   </button>
                 </div>
               )}
