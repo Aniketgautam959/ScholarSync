@@ -65,23 +65,23 @@ const internships = {
   suggested: [
     {
       id: 1,
-      title: "Frontend Developer Intern",
-      company: "Vercel",
-      logo: "https://logo.clearbit.com/vercel.com",
+      title: "Software Development Intern",
+      company: "TCS",
+      logo: "https://logo.clearbit.com/tcs.com",
     },
     {
       id: 2,
-      title: "Product Design Intern",
-      company: "Figma",
-      logo: "https://logo.clearbit.com/figma.com",
+      title: "Data Science Intern",
+      company: "Infosys",
+      logo: "https://logo.clearbit.com/infosys.com",
     },
   ],
   applied: [
     {
       id: 3,
-      title: "Software Engineer Intern",
-      company: "Google",
-      logo: "https://logo.clearbit.com/google.com",
+      title: "Government Digital India Intern",
+      company: "Ministry of Electronics & IT",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png",
     },
   ],
 };
@@ -90,23 +90,23 @@ const scholarships = {
   suggested: [
     {
       id: 1,
-      name: "Tech Excellence Scholarship",
-      authority: "Google",
-      logo: "https://logo.clearbit.com/google.com",
+      name: "AICTE Pragati Scholarship for Girls",
+      authority: "AICTE, Ministry of Education",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png",
     },
     {
       id: 2,
-      name: "Future Leaders Grant",
-      authority: "Ford Foundation",
-      logo: "https://logo.clearbit.com/fordfoundation.org",
+      name: "National Means-cum-Merit Scholarship",
+      authority: "Ministry of Education, Govt. of India",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png",
     },
   ],
   applied: [
     {
       id: 3,
-      name: "National Merit Scholarship",
-      authority: "Govt. of India",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Seal_of_the_Ministry_of_Social_Justice_and_Empowerment.svg",
+      name: "Ishan Uday Special Scholarship for NER",
+      authority: "UGC, Ministry of Education",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Government_of_India_logo.svg/200px-Government_of_India_logo.svg.png",
     },
   ],
 };
@@ -115,7 +115,7 @@ const recommendations = [
   {
     type: "Course",
     title: "Advanced Data Science with Python",
-    provider: "TechEdu University",
+    provider: "IIT Madras Online",
     rating: 4.8,
     duration: "12 weeks",
     image:
@@ -123,8 +123,8 @@ const recommendations = [
   },
   {
     type: "College",
-    title: "MIT Computer Science Program",
-    provider: "Massachusetts Institute of Technology",
+    title: "Computer Science Program",
+    provider: "IIT Delhi",
     rating: 4.9,
     duration: "4 years",
     image:
@@ -133,7 +133,7 @@ const recommendations = [
   {
     type: "Internship",
     title: "Software Engineering Intern",
-    provider: "Google Inc.",
+    provider: "TCS Digital",
     rating: 4.7,
     duration: "3 months",
     image:
@@ -147,10 +147,18 @@ const recentActivity = [
     time: "2 hours ago",
     icon: BookOpen,
   },
-  { action: "Connected with Dr. Sarah Miller", time: "1 day ago", icon: Users },
-  { action: "Applied to Stanford CS Program", time: "3 days ago", icon: Award },
   {
-    action: "Joined #MachineLearning discussion",
+    action: "Connected with Dr. Priya Sharma (IIT Delhi)",
+    time: "1 day ago",
+    icon: Users,
+  },
+  {
+    action: "Applied to IIT Delhi CS Program",
+    time: "3 days ago",
+    icon: Award,
+  },
+  {
+    action: "Joined #GovernmentScholarships discussion",
     time: "1 week ago",
     icon: Users,
   },
@@ -191,10 +199,10 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="font-serif text-4xl text-gray-800 mt-2">
-                Welcome back, Sarah!
+                Welcome back, Priya!
               </h1>
               <p className="text-gray-600">
-                Here's what's happening with your career journey today.
+                Here's what's happening with your educational journey today.
               </p>
             </div>
             {/* Test button - remove in production */}

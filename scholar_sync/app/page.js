@@ -24,23 +24,23 @@ import {
 } from 'lucide-react';
 import { faker } from '@faker-js/faker';
 
-const COLLEGE_IMAGE = "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const COLLEGE_IMAGE = "https://infra.iitd.ac.in/static/media/10.4b37a88fdbc685075e09.jpg";
 
 // --- Header Component ---
 const Header = () => {
   const router = useRouter();
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Colleges', href: '/colleges' },
-    { name: 'Internships', href: '/internships' },
-    { name: 'Educators', href: '/educators' },
+    { name: 'Services', href: '#features' },
+    { name: 'Institutions', href: '/colleges' },
+    { name: 'Opportunities', href: '/internships' },
+    { name: 'Counselors', href: '/educators' },
   ];
 
   return (
     <header className="flex items-center justify-between">
       <div className="flex items-center gap-2 cursor-pointer" onClick={() => router.push('/')}>
         <GraduationCap className="h-6 w-6 text-gray-800" />
-        <span className="font-bold text-xl text-gray-800">CareerPath</span>
+        <span className="font-bold text-xl text-gray-800">ScholarSync</span>
       </div>
       <nav className="hidden md:flex items-center gap-2">
         {navLinks.map((link) => (
@@ -83,7 +83,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         <div className="absolute bottom-0 left-0 p-8 text-white">
           <h2 className="font-serif text-4xl">
-            — The leading platform for personalized career guidance.
+            — Your gateway to government scholarships and career advancement.
           </h2>
         </div>
       </motion.div>
@@ -94,17 +94,10 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h1 className="font-serif text-5xl lg:text-6xl font-bold text-gray-800">
-          — The driving force behind more{' '}
-          <span className="relative inline-block">
-            <span className="absolute -inset-2 block">
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-xl opacity-70 animate-glow"></span>
-            </span>
-            <span className="relative text-white">AI</span>
-          </span>
-          {' '}successful careers.
+          — Empowering Indian students through government scholarships and career guidance
         </h1>
         <p className="mt-6 text-gray-600 text-lg">
-          Streamline your career planning, discover opportunities, and grow your potential — all powered by an AI assistant built for your success.
+          Access thousands of Indian government scholarships, skill development programs, and career opportunities designed to support your educational journey across India.
         </p>
         <div className="mt-8 flex items-center gap-4">
           <motion.button
@@ -123,15 +116,15 @@ const Hero = () => {
           <div className="flex items-center gap-3 p-3 bg-gray-100 rounded-2xl">
             <BookOpen className="h-6 w-6 text-gray-500" />
             <div>
-              <p className="text-sm font-bold text-gray-800">Trusted by Top Educators</p>
-              <p className="text-xs text-gray-500">Verified Professionals</p>
+              <p className="text-sm font-bold text-gray-800">Government Verified</p>
+              <p className="text-xs text-gray-500">AICTE & UGC Counselors</p>
             </div>
           </div>
           <div className="flex items-center gap-3 p-3 bg-gray-100 rounded-2xl">
             <Briefcase className="h-6 w-6 text-gray-500" />
             <div>
-              <p className="text-sm font-bold text-gray-800">Access Top Internships</p>
-              <p className="text-xs text-gray-500">Leading Companies</p>
+              <p className="text-sm font-bold text-gray-800">Indian Programs</p>
+              <p className="text-xs text-gray-500">Central & State Schemes</p>
             </div>
           </div>
         </div>
@@ -143,9 +136,9 @@ const Hero = () => {
 // --- HowItWorks Component ---
 const HowItWorks = () => {
   const featureCards = [
-    { icon: UserPlus, title: 'Profile Building', description: 'Create a dynamic profile that showcases your skills and aspirations.', color: 'bg-teal-50' },
-    { icon: Target, title: 'AI Matching', description: 'Receive tailored recommendations for courses, colleges, and careers.', color: 'bg-orange-50' },
-    { icon: LinkIcon, title: 'Community Connect', description: 'Engage with peers and mentors in our vibrant community forums.', color: 'bg-blue-50' },
+    { icon: UserPlus, title: 'Student Registration', description: 'Register with government scholarship programs and create your official student profile.', color: 'bg-teal-50' },
+    { icon: Target, title: 'Scholarship Matching', description: 'Get matched with relevant government scholarships based on your eligibility criteria.', color: 'bg-orange-50' },
+    { icon: LinkIcon, title: 'Government Connect', description: 'Connect with official government education counselors and support services.', color: 'bg-blue-50' },
   ];
   return (
     <section id="how-it-works" className="mt-24">
@@ -153,7 +146,7 @@ const HowItWorks = () => {
         <div>
           <p className="text-sm font-bold text-gray-500 tracking-widest">HOW IT WORKS</p>
           <h2 className="font-serif text-4xl text-gray-800 mt-2">
-            All your goals. Every opportunity. One platform.
+            Your complete government scholarship and career support platform.
           </h2>
         </div>
         <motion.button
@@ -190,18 +183,18 @@ const HowItWorks = () => {
 // --- SocialProof Component ---
 const SocialProof = () => {
   const logos = [
-    { name: 'Stanford', src: 'https://logo.clearbit.com/stanford.edu' },
-    { name: 'MIT', src: 'https://logo.clearbit.com/mit.edu' },
-    { name: 'Google', src: 'https://logo.clearbit.com/google.com' },
-    { name: 'Microsoft', src: 'https://logo.clearbit.com/microsoft.com' },
-    { name: 'Harvard', src: 'https://logo.clearbit.com/harvard.edu' },
-    { name: 'Coursera', src: 'https://logo.clearbit.com/coursera.org' },
+    { name: 'IIT Delhi', text: 'IIT Delhi' },
+    { name: 'IIT Bombay', text: 'IIT Bombay' },
+    { name: 'IIT Madras', text: 'IIT Madras' },
+    { name: 'UGC', text: 'UGC' },
+    { name: 'AICTE', text: 'AICTE' },
+    { name: 'NTA', text: 'NTA' },
   ];
   return (
     <div className="py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-lg font-semibold text-gray-600">
-          Trusted by students from top universities and companies
+          Trusted by students across government institutions and programs
         </h2>
         <motion.div
           className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6"
@@ -219,7 +212,9 @@ const SocialProof = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img className="h-10 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" src={logo.src} alt={logo.name} />
+              <div className="h-10 flex items-center justify-center px-4 py-2 bg-gray-100 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-200 transition-all">
+                {logo.text}
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -231,23 +226,23 @@ const SocialProof = () => {
 // --- Features Component ---
 const Features = () => {
   const features = [
-    { icon: Bot, title: 'AI-Powered Advisor', description: 'Get instant, personalized advice on courses, colleges, and career paths from our intelligent chatbot.' },
-    { icon: Award, title: 'Personalized Recommendations', description: 'Discover opportunities perfectly matched to your profile, skills, and interests.' },
-    { icon: School, title: 'Explore Colleges', description: 'Search and compare thousands of colleges and universities worldwide to find your perfect fit.' },
-    { icon: Briefcase, title: 'Find Internships & Jobs', description: 'Access a curated list of internships and entry-level jobs from top companies.' },
-    { icon: GraduationCap, title: 'Connect with Educators', description: 'Book sessions with verified career counselors and academic experts for one-on-one guidance.' },
-    { icon: Users, title: 'Community Forum', description: 'Join discussions, ask questions, and share experiences with a community of peers and mentors.' },
+    { icon: Bot, title: 'Government Scholarship Advisor', description: 'Get instant guidance on government scholarship programs, eligibility criteria, and application processes.' },
+    { icon: Award, title: 'Scholarship Matching', description: 'Discover government scholarships and financial aid programs perfectly matched to your academic profile.' },
+    { icon: School, title: 'Explore Government Institutions', description: 'Search and compare government colleges, universities, and educational institutions across the country.' },
+    { icon: Briefcase, title: 'Government Opportunities', description: 'Access official government internships, training programs, and career opportunities for students.' },
+    { icon: GraduationCap, title: 'Connect with Officials', description: 'Book sessions with government education counselors and official academic advisors for guidance.' },
+    { icon: Users, title: 'Student Support Network', description: 'Join official student forums and connect with peers in government scholarship programs.' },
   ];
   return (
     <section id="features" className="py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">Features</h2>
+          <h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">Services</h2>
           <p className="mt-2 text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight">
-            An All-in-One Career Guidance Platform
+            Complete Government Scholarship & Career Support
           </p>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
-            Everything you need to plan your academic and professional future, all in one place.
+            Everything you need to access government scholarships and build your career, all in one official platform.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -278,13 +273,29 @@ const Features = () => {
 
 // --- Testimonials Component ---
 const Testimonials = () => {
-  const testimonials = React.useMemo(() => Array.from({ length: 3 }, () => ({
-    name: faker.person.fullName(),
-    role: 'CS Student, ' + faker.location.city(),
-    avatar: `https://images.unsplash.com/photo-${1500000000000 + Math.floor(Math.random() * 500000000)}?w=60&h=60&fit=crop&crop=face`,
-    quote: `"${faker.lorem.paragraph()}"`,
-    rating: 5,
-  })), []);
+  const testimonials = [
+    {
+      name: 'Priya Sharma',
+      role: 'Computer Science, IIT Delhi',
+      avatar: `https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&h=60&fit=crop&crop=face`,
+      quote: '"CareerPath helped me discover the perfect government scholarship for my IIT studies. The platform made the application process so much easier and I received full financial support for my education."',
+      rating: 5,
+    },
+    {
+      name: 'Arjun Patel',
+      role: 'Mechanical Engineering, IIT Bombay',
+      avatar: `https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face`,
+      quote: '"Through this platform, I found multiple government scholarship opportunities that I never knew existed. The guidance from official counselors was invaluable for my career planning."',
+      rating: 5,
+    },
+    {
+      name: 'Sneha Reddy',
+      role: 'Electrical Engineering, IIT Madras',
+      avatar: `https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&crop=face`,
+      quote: '"The government scholarship matching feature is incredible. It connected me with the right programs based on my academic profile and helped me secure funding for my research project."',
+      rating: 5,
+    }
+  ];
 
   return (
     <section id="testimonials" className="py-24">
@@ -292,7 +303,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">Testimonials</h2>
           <p className="mt-2 text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Loved by Students Worldwide
+            Trusted by Students Across India
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -356,10 +367,10 @@ const FAQItem = ({ faq }) => {
 
 const FAQ = () => {
   const faqs = [
-    { question: 'Who is CareerPath for?', answer: 'CareerPath is designed for high school students, college students, and recent graduates who are looking for guidance in their academic and professional journeys. It\'s also a valuable tool for anyone considering a career change.' },
-    { question: 'Is the AI advisor free to use?', answer: 'Yes, our core AI advisor feature is completely free. We believe everyone should have access to quality career guidance. We may offer premium features with advanced analytics and one-on-one coaching in the future.' },
-    { question: 'How are the educators and counselors verified?', answer: 'We have a rigorous verification process for all educators and counselors on our platform. This includes checking their credentials, professional experience, and conducting interviews to ensure they meet our high standards of quality and expertise.' },
-    { question: 'How does CareerPath personalize recommendations?', answer: 'Our platform uses a sophisticated AI algorithm that analyzes the data you provide in your profile—such as your academic records, skills, interests, and career goals—to match you with the most relevant opportunities and resources.' },
+    { question: 'Who can use CareerPath?', answer: 'CareerPath is designed for students at all levels—from high school to postgraduate studies—who are seeking government scholarships and career guidance. It\'s also available for parents and educators supporting students in their educational journey.' },
+    { question: 'Are government scholarship services free?', answer: 'Yes, all our government scholarship matching and guidance services are completely free. We are committed to making quality education accessible to all students through government programs and initiatives.' },
+    { question: 'How are government counselors verified?', answer: 'All counselors and advisors on our platform are verified government officials or certified education professionals. We maintain strict verification processes including credential checks and official government clearance.' },
+    { question: 'How does CareerPath match students with scholarships?', answer: 'Our platform uses official government databases and eligibility criteria to match students with relevant scholarship programs. We analyze academic records, financial background, and specific program requirements to provide accurate recommendations.' },
   ];
   return (
     <section id="faq" className="py-24 bg-gray-50/50">
@@ -393,10 +404,10 @@ const CTA = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            <span className="block">Ready to take control of your future?</span>
+            <span className="block">Ready to access government scholarships?</span>
           </h2>
           <p className="mt-4 text-lg leading-6 text-indigo-200">
-            Join thousands of students who are already building their dream careers with CareerPath.
+            Join thousands of students who are already accessing government scholarships and building their careers with CareerPath.
           </p>
           <motion.button
             onClick={() => router.push('/login')}
@@ -404,7 +415,7 @@ const CTA = () => {
             whileTap={{ scale: 0.95 }}
             className="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
           >
-            Get Started for Free
+            Register for Government Services
             <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
           </motion.button>
         </motion.div>
@@ -419,7 +430,7 @@ const Footer = () => {
     <footer className="bg-transparent text-gray-600">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="mt-8 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-base text-gray-500 md:order-1">&copy; 2025 CareerPath, Inc. All rights reserved.</p>
+          <p className="text-base text-gray-500 md:order-1">&copy; 2025 CareerPath - Government Education Portal. All rights reserved.</p>
           <div className="flex space-x-6 md:order-2 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-gray-500"><span className="sr-only">GitHub</span><Github className="h-6 w-6" /></a>
             <a href="#" className="text-gray-400 hover:text-gray-500"><span className="sr-only">Twitter</span><Twitter className="h-6 w-6" /></a>
