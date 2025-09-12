@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useUser, useClerk } from '@clerk/nextjs';
 import {
   MessageSquare,
   School,
@@ -166,6 +167,8 @@ const recentActivity = [
 
 export default function Dashboard() {
   const [showOnboarding, setShowOnboarding] = useState(false);
+  const { user, isLoaded } = useUser();
+  const { signOut } = useClerk();
 
   // Show onboarding when user first lands on dashboard
   useEffect(() => {
@@ -189,6 +192,17 @@ export default function Dashboard() {
     setShowOnboarding(true);
   };
 
+  // Show loading state while user data is being fetched
+  if (!isLoaded) {
+    return (
+      <div className="p-6 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="p-6 max-w-7xl mx-auto">
@@ -197,20 +211,58 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="font-serif text-4xl text-gray-800 mt-2">
-                Welcome back, Priya!
-              </h1>
-              <p className="text-gray-600">
-                Here's what's happening with your educational journey today.
-              </p>
+            <div className="flex items-center gap-4">
+              {/* User Profile Picture */}
+              <div className="relative">
+                {isLoaded && user ? (
+                  <img
+                    src={user.imageUrl}
+                    alt={user.fullName || "User"}
+                    className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
+                  />
+                ) : (
+                  <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center border-4 border-white shadow-lg">
+                    <User className="w-8 h-8 text-gray-400" />
+                  </div>
+                )}
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+              
+              <div>
+                <h1 className="font-serif text-4xl text-gray-800 mt-2">
+                  Welcome back, {isLoaded && user ? (user.firstName || user.fullName || "Student") : "Student"}!
+                </h1>
+                <p className="text-gray-600">
+                  Here's what's happening with your educational journey today.
+                </p>
+                {isLoaded && user && user.emailAddresses[0] && (
+                  <p className="text-sm text-gray-500 mt-1">
+                    {user.emailAddresses[0].emailAddress}
+                  </p>
+                )}
+              </div>
             </div>
-            {/* Test button - remove in production */}
-            <button
-              onClick={resetOnboarding}
-              className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-              Reset Onboarding
-            </button>
+            
+            <div className="flex items-center gap-3">
+              {/* Test button - remove in production */}
+              <button
+                onClick={resetOnboarding}
+                className="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                Reset Onboarding
+              </button>
+              
+              {/* Sign Out Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => signOut()}
+                className="px-4 py-2 text-sm text-gray-600 font-medium rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
+              >
+                Sign Out
+              </motion.button>
+            </div>
           </div>
         </motion.div>
 

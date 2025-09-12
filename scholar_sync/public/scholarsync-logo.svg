@@ -1,0 +1,20 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="20" cy="20" r="20" fill="#4F46E5"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M8 16L20 12L32 16V20C32 20 20 24 20 24C20 24 8 20 8 20V16Z" fill="white"/>
+  
+  <!-- Cap Tassel -->
+  <path d="M20 12L20 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="20" cy="8" r="1" fill="white"/>
+  
+  <!-- Book -->
+  <rect x="12" y="22" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
+  <rect x="14" y="24" width="12" height="1" fill="#4F46E5"/>
+  <rect x="14" y="26" width="8" height="1" fill="#4F46E5"/>
+  <rect x="14" y="28" width="10" height="1" fill="#4F46E5"/>
+  
+  <!-- Star for Excellence -->
+  <path d="M28 8L29.5 11L33 11L30.5 13L31.5 16.5L28 14.5L24.5 16.5L25.5 13L23 11L26.5 11L28 8Z" fill="#FCD34D"/>
+</svg>

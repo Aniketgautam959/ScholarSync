@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton, useClerk, useAuth } from '@clerk/nextjs';
 import {
   GraduationCap,
   Plus,
@@ -29,6 +30,7 @@ const COLLEGE_IMAGE = "https://infra.iitd.ac.in/static/media/10.4b37a88fdbc68507
 // --- Header Component ---
 const Header = () => {
   const router = useRouter();
+  const { signOut } = useClerk();
   const navLinks = [
     { name: 'Services', href: '#features' },
     { name: 'Institutions', href: '/colleges' },
@@ -51,14 +53,48 @@ const Header = () => {
         ))}
       </nav>
       <div className="flex items-center">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => router.push('/login')}
-          className="px-5 py-2 bg-blue-500 text-white font-semibold rounded-full shadow-sm hover:bg-blue-600 transition-colors"
-        >
-          Log In
-        </motion.button>
+        <SignedOut>
+          <div className="flex items-center gap-3">
+            <SignInButton 
+              mode="modal"
+              appearance={{
+                elements: {
+                  signInButton: "px-5 py-2 text-gray-600 font-semibold rounded-full hover:bg-gray-100 transition-colors border border-gray-200 bg-white"
+                }
+              }}
+            />
+            <SignUpButton 
+              mode="modal"
+              appearance={{
+                elements: {
+                  signUpButton: "px-5 py-2 bg-blue-500 text-white font-semibold rounded-full shadow-sm hover:bg-blue-600 transition-colors"
+                }
+              }}
+            />
+          </div>
+        </SignedOut>
+        <SignedIn>
+          <div className="flex items-center gap-3">
+            <UserButton 
+              appearance={{
+                elements: {
+                  avatarBox: "w-8 h-8",
+                  userButtonPopoverCard: "shadow-xl border-0",
+                  userButtonPopoverActionButton: "hover:bg-gray-50",
+                  userButtonPopoverActionButtonText: "text-gray-700"
+                }
+              }}
+            />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => signOut()}
+              className="px-4 py-2 text-sm text-gray-600 font-medium rounded-full hover:bg-gray-100 transition-colors border border-gray-200"
+            >
+              Sign Out
+            </motion.button>
+          </div>
+        </SignedIn>
       </div>
     </header>
   );
@@ -100,17 +136,36 @@ const Hero = () => {
           Access thousands of Indian government scholarships, skill development programs, and career opportunities designed to support your educational journey across India.
         </p>
         <div className="mt-8 flex items-center gap-4">
-          <motion.button
-            onClick={() => router.push('/login')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition-colors"
-          >
-            <span className="pl-6 pr-4 py-3">Get Started</span>
-            <span className="p-3 bg-gray-700 rounded-full">
-              <ArrowRight className="h-5 w-5" />
-            </span>
-          </motion.button>
+          <SignedOut>
+            <SignUpButton 
+              mode="modal"
+              appearance={{
+                elements: {
+                  signUpButton: "flex items-center bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition-colors pl-6 pr-4 py-3"
+                }
+              }}
+            >
+              <span className="flex items-center">
+                Get Started
+                <span className="p-3 bg-gray-700 rounded-full ml-2">
+                  <ArrowRight className="h-5 w-5" />
+                </span>
+              </span>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <motion.button
+              onClick={() => router.push('/dashboard')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+            >
+              <span className="pl-6 pr-4 py-3">Go to Dashboard</span>
+              <span className="p-3 bg-gray-700 rounded-full">
+                <ArrowRight className="h-5 w-5" />
+              </span>
+            </motion.button>
+          </SignedIn>
         </div>
         <div className="mt-10 flex items-center gap-4">
           <div className="flex items-center gap-3 p-3 bg-gray-100 rounded-2xl">
@@ -409,15 +464,32 @@ const CTA = () => {
           <p className="mt-4 text-lg leading-6 text-indigo-200">
             Join thousands of students who are already accessing government scholarships and building their careers with CareerPath.
           </p>
-          <motion.button
-            onClick={() => router.push('/login')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
-          >
-            Register for Government Services
-            <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
-          </motion.button>
+          <SignedOut>
+            <SignUpButton 
+              mode="modal"
+              appearance={{
+                elements: {
+                  signUpButton: "mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
+                }
+              }}
+            >
+              <span className="flex items-center">
+                Register for Government Services
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+              </span>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <motion.button
+              onClick={() => router.push('/dashboard')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-indigo-600 bg-white hover:bg-indigo-50 sm:w-auto"
+            >
+              Go to Dashboard
+              <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+            </motion.button>
+          </SignedIn>
         </motion.div>
       </div>
     </section>
@@ -444,6 +516,16 @@ const Footer = () => {
 
 // --- Main LandingPage Export ---
 export default function LandingPage() {
+  const { isSignedIn } = useAuth();
+  const router = useRouter();
+
+  // Redirect to dashboard if user is signed in
+  React.useEffect(() => {
+    if (isSignedIn) {
+      router.push('/dashboard');
+    }
+  }, [isSignedIn, router]);
+
   return (
     <div className="w-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans text-gray-800 antialiased">
       <div className="bg-white/70 backdrop-blur-xl">
