@@ -33,6 +33,8 @@ APIs: NPTEL APIs
 Styling: (Add here if you used Tailwind / CSS Modules / etc.)
 
 📂 Project Structure
+```bash
+
 ScholarSync/
  ├── pages/          # Next.js pages (routes)
  ├── components/     # Reusable UI components
@@ -41,32 +43,35 @@ ScholarSync/
  ├── public/         # Static assets
  ├── styles/         # Global styles
  └── ...
-
+```
 🚀 Getting Started
 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/Aniketgautam959/ScholarSync.git
 cd ScholarSync
-
+```
 2️⃣ Install Dependencies
+```bash
 npm install
 # or
 yarn install
-
+```
 3️⃣ Set Up Environment Variables
-
+```bash
 Create a .env.local file in the root directory with:
 
 MONGODB_URI=your_mongodb_connection_string
 NEXT_PUBLIC_CLERK_FRONTEND_API=your_clerk_frontend_api
 CLERK_API_KEY=your_clerk_api_key
 NPTEL_API_KEY=your_nptel_api_key
-
+```
 4️⃣ Run the Development Server
+```bash
 npm run dev
 
 
 App will be available at: http://localhost:3000
-
+```
 📖 Usage
 
 Sign up / Login with Clerk authentication
